@@ -12840,3 +12840,9 @@ header.masthead .h1 {
 #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
 }
+
+/* My custom css */
+.error {
+  color: red;
+  font-size: 12px;
+}

@@ -25,7 +25,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#page-top">Public Healt Vaccination Tracker</a>
+            <a class="navbar-brand" href="#page-top">Public Health Vaccination Tracker</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -191,18 +191,21 @@
                                 <img src="./assets/img/img.jpg" class="img-fluid" alt="Image">
                             </div>
                             <div class="col-md-6">
-                                <form action="" method="post" id="modalForm">
+                                <form action="register.php" method="post" id="modalForm">
                                     <div class="mb-2">
                                         <label for="firstname" class="form-label">First Name:</label>
-                                        <input type="text" class="form-control" id="" placeholder="Abubakar">
+                                        <input type="text" class="form-control" id="firstName" placeholder="Abubakar">
+                                        <span class="error" id="nameError"></span>
                                     </div>
                                     <div class="mb-2">
                                         <label for="lastname" class="form-label">Last Name:</label>
-                                        <input type="text" class="form-control" id="" placeholder="Ahmad">
+                                        <input type="text" class="form-control" id="lastName" placeholder="Ahmad">
+                                        <span class="error" id="lastnameError"></span>
                                     </div>
                                     <div class="mb-2">
                                         <label for="date" class="form-label">Date of Birth:</label>
-                                        <input type="date" class="form-control" id="" placeholder="01-01-2024">
+                                        <input type="date" class="form-control" id="date" placeholder="01-01-2024">
+                                        <span class="error" id="dateError"></span>
                                     </div>
                                     <div class="mb-2">
                                         <div class="form-check">
@@ -223,12 +226,14 @@
 
                                     <div class="mb-2">
                                         <label for="phonenumber" class="form-label">Phone Number:</label>
-                                        <input type="text" class="form-control" id="" placeholder="+234-9011111111">
+                                        <input type="text" class="form-control" id="phoneNumber"
+                                            placeholder="+234-9011111111">
+                                        <span class="error" id="phoneError"></span>
                                     </div>
                                     <div class="mb-2">
                                         <label for="exampleFormControlTextarea1" class="form-label">Address:</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1"
-                                            rows="3"></textarea>
+                                        <textarea class="form-control" id="address" rows="3"></textarea>
+                                        <span class="error" id="addressError"></span>
                                     </div>
                                     <div class="d-grid gap-2">
                                         <button class="btn btn-primary" type="submit" name="submit">Register</button>

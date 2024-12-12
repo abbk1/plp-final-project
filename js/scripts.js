@@ -58,7 +58,63 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
+// modal form validation
 const modalForm = document.getElementById("modalForm");
+const nameError = document.getElementById("nameError");
+const lastnameError = document.getElementById("lastnameError");
+const dateError = document.getElementById("dateError");
+const phoneError = document.getElementById("phoneError");
+const addressError = document.getElementById("addressError");
+
 modalForm.addEventListener("submit", function (e) {
     e.preventDefault();
+
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var date = document.getElementById("date").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var address = document.getElementById("address").value;
+
+    var isTrue = true;
+
+    if (firstName == "") {
+        nameError.textContent = "Enter first name";
+        isTrue = false;
+    }
+    if (lastName == "") {
+        lastnameError.textContent = "Enter last name";
+        isTrue = false;
+    }
+    if (date == "") {
+        dateError.textContent = "Enter last name";
+        isTrue = false;
+    }
+    if (phoneNumber == "") {
+        phoneError.textContent = "Enter Phone number";
+        isTrue = false;
+    }
+    if (address == "") {
+        addressError.textContent = "Enter Phone number";
+        isTrue = false;
+    }
+    if (isTrue) {
+        const formdate = new FormData(modalForm);
+        fetch("submit.php", {
+            method: "POST",
+            body: formdate
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
+                    alert("Form submitted successfully", data.message)
+                } else {
+                    alert("fail to submit")
+                }
+            })
+            .catch(((error) => {
+                console.log("Error submitting the form", error);
+            }
+            ))
+
+    }
 })
